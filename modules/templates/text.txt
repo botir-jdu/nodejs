@@ -1,0 +1,3 @@
+Create new text file and append new text
+
+Yes it is
