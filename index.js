@@ -1,8 +1,13 @@
-const userData = require('./user')
-const carData = require('./car')
+const http = require('http')
 
-console.log(userData.user);
-userData.userLogger()
+const server = http.createServer((request, response) => {
+  console.log(request.url);
 
-console.log(carData.car);
-carData.carLogger()
+  response.write('<h1>Hello world</h1>')
+  response.end()
+})
+
+server.listen(3000, () =>{
+    console.log('Server has been started on port: 3000');
+})
+
