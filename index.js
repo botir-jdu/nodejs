@@ -20,6 +20,10 @@ const server = http.createServer((req, res) => {
         if(err) throw err
         res.end(content)
       })
+    } else if(req.url === '/api/admin'){
+      res.writeHead(200, {'Content-Type': 'text/json'})
+      const admin = {name: 'Botir', surname: 'Ganijonov', job: 'Full-Stack Developer'}
+      res.end(JSON.stringify(admin))
     }
   } else if(req.method === 'POST'){
     const email = []
